@@ -1,0 +1,2673 @@
+{
+	"info": {
+		"_postman_id": "0c434e60-cabf-4ddd-9e88-ca4d01fda6c2",
+		"name": "Open API TS4U User Panel",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28411780",
+		"_collection_link": "https://universal-meadow-6789.postman.co/workspace/TS4U-API-Collections~f56101d1-df6e-4818-8604-3687e61deb90/collection/20098857-0c434e60-cabf-4ddd-9e88-ca4d01fda6c2?action=share&source=collection_link&creator=28411780"
+	},
+	"item": [
+		{
+			"name": "Home",
+			"item": [
+				{
+					"name": "Home data",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user,I should be able to see on the ts4u home page",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/course/homedata",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"course",
+												"homedata"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Google Review",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user,I should be able to see on the ts4u google Review",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/programpage/getitems/all/googleReview",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"programpage",
+												"getitems",
+												"all",
+												"googleReview"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Read blog",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user,I should be able to see on the ts4u blog",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"limit\": 6,\r\n    \"page\": 1,\r\n    \"sort\": \"latest\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl_user}}/api/blog/articles",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"blog",
+												"articles"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Negative",
+							"item": [
+								{
+									"name": "As an user,I shouldn't be able to see on the ts4u blog using without limit data",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"\r",
+													"//Validate the status code\r",
+													"pm.test(\"As an user should get the '400' status code when executing to submit resume without inputting the token\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"//validate the response time\r",
+													"pm.test(\"As an user should get the response below 2000 ms when executing to submit resume without inputting the token\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"//Validate the status code name\r",
+													"pm.test(\"As an user should get the 'Bad Request' status code name when executing to submit resume without inputting the token\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"//Validate the response headers\r",
+													"pm.test(\"Validate the response header of the request to submit resume without inputting the token\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Type\");\r",
+													"     pm.response.to.have.header(\"Date\");\r",
+													"     pm.response.to.have.header(\"Connection\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"limit\": ,\r\n    \"page\": 1,\r\n    \"sort\": \"latest\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl_user}}/api/blog/articles",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"blog",
+												"articles"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "As an user,I shouldn't be able to see on the ts4u blog using without page information",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"\r",
+													"//Validate the status code\r",
+													"pm.test(\"As an user should get the '400' status code when executing to submit resume without inputting the token\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"//validate the response time\r",
+													"pm.test(\"As an user should get the response below 2000 ms when executing to submit resume without inputting the token\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"//Validate the status code name\r",
+													"pm.test(\"As an user should get the 'Bad Request' status code name when executing to submit resume without inputting the token\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"//Validate the response headers\r",
+													"pm.test(\"Validate the response header of the request to submit resume without inputting the token\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Type\");\r",
+													"     pm.response.to.have.header(\"Date\");\r",
+													"     pm.response.to.have.header(\"Connection\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"limit\": 6,\r\n    \"page\": ,\r\n    \"sort\": \"latest\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl_user}}/api/blog/articles",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"blog",
+												"articles"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "As an user,I shouldn't be able to see on the ts4u blog using without sort data.",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"\r",
+													"//Validate the status code\r",
+													"pm.test(\"As an user should get the '400' status code when executing to submit resume without inputting the token\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"//validate the response time\r",
+													"pm.test(\"As an user should get the response below 2000 ms when executing to submit resume without inputting the token\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"//Validate the status code name\r",
+													"pm.test(\"As an user should get the 'Bad Request' status code name when executing to submit resume without inputting the token\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"//Validate the response headers\r",
+													"pm.test(\"Validate the response header of the request to submit resume without inputting the token\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Type\");\r",
+													"     pm.response.to.have.header(\"Date\");\r",
+													"     pm.response.to.have.header(\"Connection\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"limit\": 6,\r\n    \"page\": 1,\r\n    \"sort\": \r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl_user}}/api/blog/articles",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"blog",
+												"articles"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Enrollment data",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user,I should be able to see on the all enrollmentdata",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"programs\");\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/user/enrollmentdata",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"user",
+												"enrollmentdata"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get active",
+					"item": [
+						{
+							"name": "Negative",
+							"item": [
+								{
+									"name": "As an user,I should be able to see on the get active pages",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/announcement/getactive",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"announcement",
+												"getactive"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Contents service",
+			"item": [
+				{
+					"name": "H-1B Inquiries",
+					"item": [
+						{
+							"name": "(FAIL)Sing up",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user,I should be able to sing up on the human varification.",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{user_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"firstName\": \"Test\",\r\n    \"lastName\": \"1234\",\r\n    \"middleName\": \"\",\r\n    \"dob\": \"2023-08-06\",\r\n    \"phone\": \"01949338805\",\r\n    \"whatsApp\": \"01949338805\",\r\n    \"email\": \"mituldas751@gmail.com\",\r\n    \"linkedin\": \"\",\r\n    \"hasPassport\": true,\r\n    \"doesExpire\": true,\r\n    \"isGraduate\": true,\r\n    \"isCse\": true,\r\n    \"hasCertificate\": false,\r\n    \"certificateList\": \"\",\r\n    \"workExperience\": \"\",\r\n    \"currentRole\": \"\",\r\n    \"hasEnglishSkill\": true,\r\n    \"communicationRating\": 5,\r\n    \"didWorkOutsiteBd\": true,\r\n    \"isMarried\": true,\r\n    \"takeFamily\": true,\r\n    \"learnNewSkill\": true,\r\n    \"resume\": \"\",\r\n    \"certificate\": \"\",\r\n    \"passport\": \"\",\r\n    \"captchaToken\": \"03ADUVZwCwdMC6G81rK9K5AsBeaYQ_yvZt5MmZtbl4di9BWncsy3penzxYIhu3BbR0Oy-pGDKuo0Hhrc3_63uePNjbWhrhovNvh5ooUGAHSuxa9_R-edNNVgPfIm-cFa9gLnCT8YiQKg3-DHr11ZH8Y0hJymLlylmH1xB4ZwL9n-NcJq8quLYKEdvIzzaZfzIHM2ngJgmhgQq_DZmw4AJQO95Hl_V6AgHALeSAa8nKVR9Ye3fBEjbEdc_BhupNOUgZ0dOM86FtySRBzFDEQ3AK-ZOhkz6-MW_fX16FcSvsZAqre_MFilGcZtFaR48jEW9ZtSjbWuKQRuZQSKFmc8ufE3bai1NUbeVOhsyPh_nectcFEOF78zyDaJIXSXJEDFe0FvDrLpR8e4XXyDafpPeJqYF8aChVG9FwwVO1XsAQgwT9ZLeKMfuCqqD4_e_n0Qd3yW18okvXEwFtHD6H8qjTUN0GCvmBGkG1XMrQMY7290QLLDYiKWJsQead5q4NrL6iVQSbMPUnnY8a4Ez5WIyxmeYVKLhro9m68ok0JDjh7-S9_mtXIPCxrB_JaQjWh6xe49HvDnTlCccD\",\r\n    \"category\": \"h1b\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl_user}}/api/immigration/signup",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"immigration",
+														"signup"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Negative",
+									"item": [
+										{
+											"name": "As an user, I want to signup on the immigration without giving the body data",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"//Validate the status code\r",
+															"pm.test(\"User should get the '400' status code when executing to get all the portal documents without inputting the body data\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"//validate the response time\r",
+															"pm.test(\"User should get the response below 2000 ms when executing to get all the portal documents without inputting the body data\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"//Validate the status code name\r",
+															"pm.test(\"Content writer should get the 'Bad Request' status code name when executing to get all the portal documents without inputting the body data\", function () {\r",
+															"    pm.response.to.have.status(\"Bad Request\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Validate the response header of the request to get all the portal documents without inputting the body data\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Type\");\r",
+															"     pm.response.to.have.header(\"Date\");\r",
+															"     pm.response.to.have.header(\"Connection\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl_user}}/api/immigration/signup",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"immigration",
+														"signup"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Blog",
+					"item": [
+						{
+							"name": "Articles",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user,I should be able to create  on the new blog",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"page\": 1,\r\n    \"limit\": 10,\r\n    \"sort\": \"latest\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl_user}}/api/blog/articles",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"blog",
+														"articles"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Negative",
+									"item": [
+										{
+											"name": "As an user, I want to article on the blog without giving the number of page limit",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"//Validate the status code\r",
+															"pm.test(\"User should get the '400' status code when executing to article on the blog without inputting the page limit\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"//validate the response time\r",
+															"pm.test(\"User should get the response below 2000 ms when executing to article on the blog without inputting the page limit\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"//Validate the status code name\r",
+															"pm.test(\"Content writer should get the 'Bad Request' status code name when executing to article on the blog without inputting the page limit\", function () {\r",
+															"    pm.response.to.have.status(\"Bad Request\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Validate the response header of the request to article on the blog without inputting the page limit\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Type\");\r",
+															"     pm.response.to.have.header(\"Date\");\r",
+															"     pm.response.to.have.header(\"Connection\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"page\": 1,\r\n    \"limit\": ,\r\n    \"sort\": \"latest\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl_user}}/api/blog/articles",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"blog",
+														"articles"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Tags",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user,I should be able to tags on the new blog",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/blog/tags",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"blog",
+														"tags"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Comments",
+							"item": [
+								{
+									"name": "Individual post",
+									"item": [
+										{
+											"name": "Positive",
+											"item": [
+												{
+													"name": "As an user, I should be able to post on the comments blog",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"exec": [
+																	"pm.test(\"Status code name has string\", function () {\r",
+																	"    pm.response.to.have.status(\"OK\");\r",
+																	"});\r",
+																	"pm.test(\"Response time is less than 2000ms\", function () {\r",
+																	"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+																	"});\r",
+																	"pm.test(\"Body matches string response successfully\", function () {\r",
+																	"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+																	"});\r",
+																	"pm.test(\"Successful GET request\", function () {\r",
+																	"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+																	"});\r",
+																	"pm.test(\"Content-Length is present\", function () {\r",
+																	"    pm.response.to.have.header(\"Content-Length\");\r",
+																	"});"
+																],
+																"type": "text/javascript"
+															}
+														}
+													],
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{user_token}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"comment\": \"<p>Good information. Just so you know, nobody can help us.</p><p>Thank you.</p>\",\r\n    \"article\": \"64cb86744e4cd300195d5709\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl_user}}/api/blog/comment/post",
+															"host": [
+																"{{baseUrl_user}}"
+															],
+															"path": [
+																"api",
+																"blog",
+																"comment",
+																"post"
+															]
+														}
+													},
+													"response": []
+												}
+											]
+										},
+										{
+											"name": "Negative",
+											"item": [
+												{
+													"name": "As an user, I shouldn't be able to post on the comment without giving the token",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"exec": [
+																	"//Validate the status code\r",
+																	"pm.test(\"User should get the '400' status code when executing to comment on the post without inputting the token\", function () {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"//validate the response time\r",
+																	"pm.test(\"User should get the response below 2000 ms when executing to comment on the post without inputting the token\", function () {\r",
+																	"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+																	"});\r",
+																	"//Validate the status code name\r",
+																	"pm.test(\"Content writer should get the 'Bad Request' status code name when executing to comment on the post without inputting the token\", function () {\r",
+																	"    pm.response.to.have.status(\"Bad Request\");\r",
+																	"});\r",
+																	"pm.test(\"Validate the response header of the request to comment on the post without inputting the token\", function () {\r",
+																	"    pm.response.to.have.header(\"Content-Type\");\r",
+																	"     pm.response.to.have.header(\"Date\");\r",
+																	"     pm.response.to.have.header(\"Connection\");\r",
+																	"});\r",
+																	""
+																],
+																"type": "text/javascript"
+															}
+														}
+													],
+													"request": {
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"comment\": \"<p>Good information. Just so you know, nobody can help us.</p><p>Thank you.</p>\",\r\n    \"article\": \"64cb86744e4cd300195d5709\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl_user}}/api/blog/comment/post",
+															"host": [
+																"{{baseUrl_user}}"
+															],
+															"path": [
+																"api",
+																"blog",
+																"comment",
+																"post"
+															]
+														}
+													},
+													"response": []
+												},
+												{
+													"name": "As an user, I shouldn't be able to post on the comment without giving the article id",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"exec": [
+																	"//Validate the status code\r",
+																	"pm.test(\"User should get the '400' status code when executing to comment on the post without inputting article id\", function () {\r",
+																	"    pm.response.to.have.status(400);\r",
+																	"});\r",
+																	"//validate the response time\r",
+																	"pm.test(\"User should get the response below 2000 ms when executing to comment on the post without inputting article id\", function () {\r",
+																	"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+																	"});\r",
+																	"//Validate the status code name\r",
+																	"pm.test(\"Content writer should get the 'Bad Request' status code name when executing to comment on the post without inputting article id\", function () {\r",
+																	"    pm.response.to.have.status(\"Bad Request\");\r",
+																	"});\r",
+																	"pm.test(\"Validate the response header of the request to comment on the post without inputting article id\", function () {\r",
+																	"    pm.response.to.have.header(\"Content-Type\");\r",
+																	"     pm.response.to.have.header(\"Date\");\r",
+																	"     pm.response.to.have.header(\"Connection\");\r",
+																	"});\r",
+																	""
+																],
+																"type": "text/javascript"
+															}
+														}
+													],
+													"request": {
+														"auth": {
+															"type": "bearer",
+															"bearer": [
+																{
+																	"key": "token",
+																	"value": "{{user_token}}",
+																	"type": "string"
+																}
+															]
+														},
+														"method": "POST",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "{\r\n    \"comment\": \"<p>Good information. Just so you know, nobody can help us.</p><p>Thank you.</p>\",\r\n    \"article\": \"\"\r\n}",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl_user}}/api/blog/comment/post",
+															"host": [
+																"{{baseUrl_user}}"
+															],
+															"path": [
+																"api",
+																"blog",
+																"comment",
+																"post"
+															]
+														}
+													},
+													"response": []
+												}
+											]
+										}
+									]
+								},
+								{
+									"name": "See all post",
+									"item": [
+										{
+											"name": "Positive",
+											"item": [
+												{
+													"name": "As an user,I should be able to comments on the new blog",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"exec": [
+																	"pm.test(\"Status code name has string\", function () {\r",
+																	"    pm.response.to.have.status(\"OK\");\r",
+																	"});\r",
+																	"pm.test(\"Response time is less than 2000ms\", function () {\r",
+																	"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+																	"});\r",
+																	"pm.test(\"Body matches string response successfully\", function () {\r",
+																	"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+																	"});\r",
+																	"pm.test(\"Successful GET request\", function () {\r",
+																	"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+																	"});\r",
+																	"pm.test(\"Content-Length is present\", function () {\r",
+																	"    pm.response.to.have.header(\"Content-Length\");\r",
+																	"});"
+																],
+																"type": "text/javascript"
+															}
+														}
+													],
+													"request": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl_user}}/api/blog/comments/64cb86744e4cd300195d5709",
+															"host": [
+																"{{baseUrl_user}}"
+															],
+															"path": [
+																"api",
+																"blog",
+																"comments",
+																"64cb86744e4cd300195d5709"
+															]
+														}
+													},
+													"response": []
+												}
+											]
+										},
+										{
+											"name": "Negative",
+											"item": [
+												{
+													"name": "As an user,I shouldn't be able to comments on without inputing the user id",
+													"event": [
+														{
+															"listen": "test",
+															"script": {
+																"exec": [
+																	"pm.test(\"Status code name has string\", function () {\r",
+																	"    pm.response.to.have.status(\"OK\");\r",
+																	"});\r",
+																	"pm.test(\"Response time is less than 2000ms\", function () {\r",
+																	"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+																	"});\r",
+																	"pm.test(\"Body matches string response successfully\", function () {\r",
+																	"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+																	"});\r",
+																	"pm.test(\"Successful GET request\", function () {\r",
+																	"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+																	"});\r",
+																	"pm.test(\"Content-Length is present\", function () {\r",
+																	"    pm.response.to.have.header(\"Content-Length\");\r",
+																	"});"
+																],
+																"type": "text/javascript"
+															}
+														}
+													],
+													"request": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl_user}}/api/blog/comments/{}",
+															"host": [
+																"{{baseUrl_user}}"
+															],
+															"path": [
+																"api",
+																"blog",
+																"comments",
+																"{}"
+															]
+														}
+													},
+													"response": []
+												}
+											]
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Save blog",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I should be able to save on the new blog",
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{user_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/blog/save/64cb86744e4cd300195d5709",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"blog",
+														"save",
+														"64cb86744e4cd300195d5709"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Negative",
+									"item": [
+										{
+											"name": "As an user, I shouldn't be able to save on without inputting  the blog id",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"//Validate the status code\r",
+															"pm.test(\"User should get the '400' status code when executing to article on the blog without inputting the blog id\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"//validate the response time\r",
+															"pm.test(\"User should get the response below 2000 ms when executing to article on the blog without inputting the blog id\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"//Validate the status code name\r",
+															"pm.test(\"Content writer should get the 'Bad Request' status code name when executing to article on the blog without inputting the blog id\", function () {\r",
+															"    pm.response.to.have.status(\"Bad Request\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Validate the response header of the request to article on the blog without inputting the blog id\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Type\");\r",
+															"     pm.response.to.have.header(\"Date\");\r",
+															"     pm.response.to.have.header(\"Connection\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{user_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "POST",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/blog/save/{}",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"blog",
+														"save",
+														"{}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Portal Doc",
+					"item": [
+						{
+							"name": "Get docs",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I should be able to see on the all uploaded portal documents",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/portal-doc/get-docs",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"portal-doc",
+														"get-docs"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Single docs",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I should be able to see on the single portal documents",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/portal-doc/single/64cb86744e4cd300195d5709",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"portal-doc",
+														"single",
+														"64cb86744e4cd300195d5709"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "See all Catagory",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I should be able to see on the all category",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/portal-doc/category/get",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"portal-doc",
+														"category",
+														"get"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Find content",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I should be able to find on the content",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/content/findcontent",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"content",
+														"findcontent"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Program Service",
+			"item": [
+				{
+					"name": "Course",
+					"item": [
+						{
+							"name": "All course",
+							"item": [
+								{
+									"name": "Positive",
+									"item": []
+								},
+								{
+									"name": "As an user, I should be able to see all the course contain",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/course/allcourse",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"course",
+												"allcourse"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "See all",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I should be able to get all the course contain",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/course/get",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"course",
+														"get"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Joined Course",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I should be able to joined on the course",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/course/isjoined/64a93fca9107670019e92c19",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"course",
+														"isjoined",
+														"64a93fca9107670019e92c19"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Home data",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user, I should be able to course on the  homedata",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/course/homedata",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"course",
+												"homedata"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Get catagory list",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user, I should be able to get all the category list",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/course/getlist/610c4984b000a890e91f5d73",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"course",
+												"getlist",
+												"610c4984b000a890e91f5d73"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Category",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user, I should be able to get all the category",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"categories\");\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/category/getcategory",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"category",
+												"getcategory"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Roadmap",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user, I should be able to find on the roadmap",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/course/roadmap/find/610c4984b000a890e91f5d73",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"course",
+												"roadmap",
+												"find",
+												"610c4984b000a890e91f5d73"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Negative",
+							"item": [
+								{
+									"name": "As an user, I want to find on the roadmap without giving the id",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"//Validate the status code\r",
+													"pm.test(\"User should get the '400' status code when executing to article on the blog without inputting the page limit\", function () {\r",
+													"    pm.response.to.have.status(400);\r",
+													"});\r",
+													"//validate the response time\r",
+													"pm.test(\"User should get the response below 2000 ms when executing to article on the blog without inputting the page limit\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"//Validate the status code name\r",
+													"pm.test(\"Content writer should get the 'Bad Request' status code name when executing to article on the blog without inputting the page limit\", function () {\r",
+													"    pm.response.to.have.status(\"Bad Request\");\r",
+													"});\r",
+													"\r",
+													"pm.test(\"Validate the response header of the request to article on the blog without inputting the page limit\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Type\");\r",
+													"     pm.response.to.have.header(\"Date\");\r",
+													"     pm.response.to.have.header(\"Connection\");\r",
+													"});\r",
+													""
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/course/roadmap/find/{{}}",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"course",
+												"roadmap",
+												"find",
+												"{{}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Success",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user, I should be able to see all the success",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/programpage/getitems/all/success\n",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"programpage",
+												"getitems",
+												"all",
+												"success\n"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Videos",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user, I should be able to see all the videos",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Successful GET request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl_user}}/api/tv/getall\n",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"tv",
+												"getall\n"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Question",
+					"item": [
+						{
+							"name": "Interview",
+							"item": [
+								{
+									"name": "Possitive",
+									"item": [
+										{
+											"name": "As an user, I should be able to see on the interview quetion",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/ts4u-interview/question/autocomplete/?query=something",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"ts4u-interview",
+														"question",
+														"autocomplete",
+														""
+													],
+													"query": [
+														{
+															"key": "query",
+															"value": "something"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Negative",
+									"item": [
+										{
+											"name": "As an user, I want to complete on the interview question without giving the query params",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"//Validate the status code\r",
+															"pm.test(\"User should get the '400' status code when executing to article on the blog without inputting the query params\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"//validate the response time\r",
+															"pm.test(\"User should get the response below 2000 ms when executing to article on the blog without inputting the query params\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"//Validate the status code name\r",
+															"pm.test(\"Content writer should get the 'Bad Request' status code name when executing to article on the blog without inputting the query params\", function () {\r",
+															"    pm.response.to.have.status(\"Bad Request\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Validate the response header of the request to article on the blog without inputting the query params\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Type\");\r",
+															"     pm.response.to.have.header(\"Date\");\r",
+															"     pm.response.to.have.header(\"Connection\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/ts4u-interview/question/autocomplete/",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"ts4u-interview",
+														"question",
+														"autocomplete",
+														""
+													],
+													"query": [
+														{
+															"key": "query",
+															"value": "something",
+															"disabled": true
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Search",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I want to question search the ts4u-interview",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful POST request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"query\": \"test\",\r\n    \"page\": 1,\r\n    \"limit\": 10\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl_user}}/api/ts4u-interview/question/search",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"ts4u-interview",
+														"question",
+														"search"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Negative",
+									"item": [
+										{
+											"name": "As an user, I want to search on the question without giving the body data",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"//Validate the status code\r",
+															"pm.test(\"User should get the '400' status code when executing to article on the blog without inputting the page limit\", function () {\r",
+															"    pm.response.to.have.status(400);\r",
+															"});\r",
+															"//validate the response time\r",
+															"pm.test(\"User should get the response below 2000 ms when executing to article on the blog without inputting the page limit\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"//Validate the status code name\r",
+															"pm.test(\"Content writer should get the 'Bad Request' status code name when executing to article on the blog without inputting the page limit\", function () {\r",
+															"    pm.response.to.have.status(\"Bad Request\");\r",
+															"});\r",
+															"\r",
+															"pm.test(\"Validate the response header of the request to article on the blog without inputting the page limit\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Type\");\r",
+															"     pm.response.to.have.header(\"Date\");\r",
+															"     pm.response.to.have.header(\"Connection\");\r",
+															"});\r",
+															""
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl_user}}/api/ts4u-interview/question/search",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"ts4u-interview",
+														"question",
+														"search"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Initial data",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I want to question initialdata on the ts4u-interview",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/assignment/import-to-interview",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"assignment",
+														"import-to-interview"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Enrollment Service",
+			"item": [
+				{
+					"name": "(FAIL)bulk upload",
+					"item": [
+						{
+							"name": "Positive",
+							"item": [
+								{
+									"name": "As an user, I should be able to upload on the bulk file",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{user_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/TS4U/Desktop/assignment_bulk.csv"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl_user}}/api/enrollment-test/bulkupload",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"enrollment-test",
+												"bulkupload"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Negative",
+							"item": [
+								{
+									"name": "As an user, I should be able to upload on the bulk file",
+									"event": [
+										{
+											"listen": "test",
+											"script": {
+												"exec": [
+													"pm.test(\"Status code name has string\", function () {\r",
+													"    pm.response.to.have.status(\"OK\");\r",
+													"});\r",
+													"pm.test(\"Response time is less than 2000ms\", function () {\r",
+													"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+													"});\r",
+													"pm.test(\"Body matches string response successfully\", function () {\r",
+													"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+													"});\r",
+													"pm.test(\"Successful POST request\", function () {\r",
+													"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+													"});\r",
+													"pm.test(\"Content-Length is present\", function () {\r",
+													"    pm.response.to.have.header(\"Content-Length\");\r",
+													"});"
+												],
+												"type": "text/javascript"
+											}
+										}
+									],
+									"request": {
+										"auth": {
+											"type": "bearer",
+											"bearer": [
+												{
+													"key": "token",
+													"value": "{{user_token}}",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "file",
+													"type": "file",
+													"src": "/C:/Users/TS4U/Desktop/assignment_bulk.csv"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{baseUrl_user}}/api/enrollment-test/bulkupload",
+											"host": [
+												"{{baseUrl_user}}"
+											],
+											"path": [
+												"api",
+												"enrollment-test",
+												"bulkupload"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "(FAIL)Find User",
+					"item": [
+						{
+							"name": "As an user, I should be able to upload on the bulk file",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code name has string\", function () {\r",
+											"    pm.response.to.have.status(\"OK\");\r",
+											"});\r",
+											"pm.test(\"Response time is less than 2000ms\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});\r",
+											"pm.test(\"Body matches string response successfully\", function () {\r",
+											"    pm.expect(pm.response.text()).to.include(\"success\");\r",
+											"});\r",
+											"pm.test(\"Successful POST request\", function () {\r",
+											"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+											"});\r",
+											"pm.test(\"Content-Length is present\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Length\");\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_user}}/api/students/finduser",
+									"host": [
+										"{{baseUrl_user}}"
+									],
+									"path": [
+										"api",
+										"students",
+										"finduser"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Common service",
+			"item": [
+				{
+					"name": "Settings",
+					"item": [
+						{
+							"name": "Get TvSlider",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I should be able to see TvSlider on the settings",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/settings/getTvSlider",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"settings",
+														"getTvSlider"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "Get slider",
+							"item": [
+								{
+									"name": "Positive",
+									"item": [
+										{
+											"name": "As an user, I should be able to see get slider on the settings",
+											"event": [
+												{
+													"listen": "test",
+													"script": {
+														"exec": [
+															"pm.test(\"Status code name has string\", function () {\r",
+															"    pm.response.to.have.status(\"OK\");\r",
+															"});\r",
+															"pm.test(\"Response time is less than 2000ms\", function () {\r",
+															"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+															"});\r",
+															"pm.test(\"Body matches string response successfully\", function () {\r",
+															"    pm.expect(pm.response.text()).to.include(\"sliders\");\r",
+															"});\r",
+															"pm.test(\"Successful GET request\", function () {\r",
+															"    pm.expect(pm.response.code).to.be.oneOf([200, 202]);\r",
+															"});\r",
+															"pm.test(\"Content-Length is present\", function () {\r",
+															"    pm.response.to.have.header(\"Content-Length\");\r",
+															"});"
+														],
+														"type": "text/javascript"
+													}
+												}
+											],
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": [
+														{
+															"key": "token",
+															"value": "{{user_token}}",
+															"type": "string"
+														}
+													]
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl_user}}/api/settings/getslider",
+													"host": [
+														"{{baseUrl_user}}"
+													],
+													"path": [
+														"api",
+														"settings",
+														"getslider"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "URL shortner",
+					"item": [
+						{
+							"name": "Negative",
+							"item": []
+						},
+						{
+							"name": "As an user, I want to short on the url without giving the id",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"//Validate the status code\r",
+											"pm.test(\"User should get the '400' status code when executing to article on the blog without inputting the body data\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"//validate the response time\r",
+											"pm.test(\"User should get the response below 2000 ms when executing to article on the blog without inputting the body data\", function () {\r",
+											"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+											"});\r",
+											"//Validate the status code name\r",
+											"pm.test(\"Content writer should get the 'Bad Request' status code name when executing to article on the blog without inputting the body data\", function () {\r",
+											"    pm.response.to.have.status(\"Bad Request\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Validate the response header of the request to article on the blog without inputting the body data\", function () {\r",
+											"    pm.response.to.have.header(\"Content-Type\");\r",
+											"     pm.response.to.have.header(\"Date\");\r",
+											"     pm.response.to.have.header(\"Connection\");\r",
+											"});\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{user_token}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl_user}}/api/short-url/get/64a9932d004d7c0019580ab0",
+									"host": [
+										"{{baseUrl_user}}"
+									],
+									"path": [
+										"api",
+										"short-url",
+										"get",
+										"64a9932d004d7c0019580ab0"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
